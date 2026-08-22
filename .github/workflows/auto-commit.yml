@@ -1,25 +1,20 @@
 name: Auto Commit
+
 on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
-  commit:
+  auto_commit:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Update contribution file
+      - name: Create empty commit
         run: |
-          echo "$(date) - automated commit" >> contribution.txt
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "Rajnish Singh"
-          git config --global user.email "rajnishsingh@users.noreply.github.com"
-          git add contribution.txt
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: auto update contribution"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git commit --allow-empty -m "chore: auto commit to keep workflow active"
           git push
