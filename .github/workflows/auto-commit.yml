@@ -28,8 +28,8 @@ jobs:
           
       - name: Commit changes
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'givemehat'
+          git config --global user.email '126698576+givemehat@users.noreply.github.com'
           git add LAST_UPDATED
           
           arr[0]="chore(bot): 😂 auto commit [skip ci]"
