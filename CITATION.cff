@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you utilize the QDMS Open Quantum Systems financial simulation framework in your research, please cite it as below."
+title: "QDMS: Quantum Dissipative Market Risk Simulator via the Lindblad Master Equation"
+authors:
+  - family-names: "Singh"
+    given-names: "Rajnish"
+    orcid: ""
+    affiliation: "Technology Innovation Hub (TIH), IIT Guwahati"
+date-released: 2026-10-15
+url: "https://github.com/givemehat/qdms-quantum-market-simulator"
+repository-code: "https://github.com/givemehat/qdms-quantum-market-simulator"
+keywords:
+  - "open quantum systems"
+  - "lindblad master equation"
+  - "qutip"
+  - "quantum computing"
+  - "financial risk"
+  - "extreme tail risk"
+  - "fastapi"
+license: "MIT"
