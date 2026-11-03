@@ -39,9 +39,9 @@ def solve_lindblad_master_equation(
 
     print(f"Running open quantum system simulation over {len(times)} time steps...")
 
-    # 💡 CHANGE HERE: Pass e_ops as an empty list [] so mesolve returns full states (result.states)
-    # instead of direct expectation arrays. This lets us intercept raw density matrices.
-    result = mesolve(H, initial_state, times, collapse_operators, [])
+    # Pass c_ops and e_ops as keyword arguments for seamless QuTiP 4.x and 5.x compatibility.
+    # Passing e_ops=[] ensures mesolve returns density matrix states (result.states).
+    result = mesolve(H, initial_state, times, c_ops=collapse_operators, e_ops=[])
 
     # Pre-allocate clean sanitized tracking lists for target indicators
     sanitized_expectations = [[] for _ in range(num_assets)]
